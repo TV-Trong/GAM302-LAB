@@ -49,6 +49,8 @@ public class PlayerProperties : NetworkBehaviour
     {
         CurrentHP -= damage;
 
+        AudioManager.Instance.PlayAudioRpc("Hurt", "Master/SFX", transform.position);
+
         HPImageFill.fillAmount = CurrentHP / BaseHP;
 
         if (CurrentHP <= 0)

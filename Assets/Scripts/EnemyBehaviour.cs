@@ -128,6 +128,8 @@ public class EnemyBehaviour : CharacterBehaviour
     {
         CurrentHP -= damage;
 
+        AudioManager.Instance.PlayAudioRpc("Skeleton", "Master/SFX", transform.position);
+
         healthSlider.fillAmount = CurrentHP / BaseHP;
 
         if (CurrentHP <= 0)

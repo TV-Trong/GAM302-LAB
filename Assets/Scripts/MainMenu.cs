@@ -48,6 +48,8 @@ public class MainMenu : NetworkBehaviour
 
     public async void StartGame(GameMode mode, string roomName, string playScene)
     {
+        PlayerPrefs.SetString("LastRoom", roomName);
+
         if (runnerInstance == null)
         {
             runnerInstance = Instantiate(runnerPrefab);

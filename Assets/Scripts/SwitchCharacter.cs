@@ -21,4 +21,10 @@ public class SwitchCharacter : MonoBehaviour
         goblinObject.SetActive(!toggle);
         chosenPlayer = toggle ? PlayerType.Human : PlayerType.Goblin;
     }
+
+    public void LoadCharacter(PlayerType _playerType)
+    {
+        chosenPlayer = _playerType;
+        toggle = chosenPlayer == PlayerType.Human ? true : false;
+    }
 }

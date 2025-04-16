@@ -110,6 +110,10 @@ public class PlayerBehaviour : CharacterBehaviour
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void RpcAttackTrigger()
     {
+        if (!HasInputAuthority)
+            return;
+
+        AudioManager.Instance.PlayAudioRpc("Sword", "Master/SFX", transform.position);
         animator.SetTrigger("Attack");
     }
 
